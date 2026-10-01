@@ -1,0 +1,9 @@
+{# Mall för ett enskilt inlägg #}
+<article class="kort inlagg">
+    <div class="huvud">
+        <span class="namn">{{ post.namn }}</span>
+        {% if post.ort %}<span class="ort">från {{ post.ort }}</span>{% endif %}
+        <time datetime="{{ post.tid }}">{{ post.tid|datum }}</time>
+    </div>
+    <p class="text">{{ post.meddelande }}</p>
+</article>
