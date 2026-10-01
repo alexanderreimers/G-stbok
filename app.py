@@ -1,4 +1,4 @@
-# Gästbok – steg 3 (A-nivå)
+# Gästbok
 # Alla inlägg sparas i korrekt JSON-format (data.json)
 # och skrivs ut via HTML-mallar (Jinja2 med mallarv).
 import json
