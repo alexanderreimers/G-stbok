@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="kort">
+    <h2>Skriv ett inlägg</h2>
+
+    {% if tack %}
+        <p class="tack">Tack! Ditt inlägg har sparats.</p>
+    {% endif %}
+
+    {% if fel %}
+        <ul class="fel">
+            {% for f in fel %}<li>{{ f }}</li>{% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="post">
+        <div class="rad">
+            <div class="falt">
+                <label for="namn">Namn *</label>
+                <input type="text" id="namn" name="namn" maxlength="60" required
+                       value="{{ formular.namn }}">
+            </div>
+            <div class="falt">
+                <label for="ort">Ort <span class="valfri">(valfritt)</span></label>
+                <input type="text" id="ort" name="ort" maxlength="60"
+                       value="{{ formular.ort }}">
+            </div>
+        </div>
+        <div class="falt">
+            <label for="meddelande">Meddelande *</label>
+            <textarea id="meddelande" name="meddelande" rows="5"
+                      maxlength="{{ max_meddelande }}" required>{{ formular.meddelande }}</textarea>
+        </div>
+        <button type="submit">Skicka</button>
+    </form>
+</section>
+
+<section>
+    <h2>Inlägg ({{ inlagg|length }})</h2>
+    {% for post in inlagg %}
+        {% include "inlagg.html" %}
+    {% else %}
+        <p class="tomt">Inga inlägg ännu. Bli först!</p>
+    {% endfor %}
+</section>
+{% endblock %}
