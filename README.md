@@ -42,9 +42,3 @@ python app.py
 ```
 
 Öppna sedan http://127.0.0.1:5000 i webbläsaren.
-
-## Utvecklingssteg
-
-1. **E** – inlägg skrivs till en textfil och visas på en webbsida
-2. **C** – namn och tidpunkt sparas, inläggen visas med struktur
-3. **A** – allt sparas i JSON och skrivs ut via HTML-mallar
